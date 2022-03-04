@@ -1,0 +1,9 @@
+{
+  "*.+(js|ts|tsx)" :[
+    "eslint --ignore-pattern '!.eslintrc.js' --ignore-pattern '!.babelrc.js' --fix --max-warnings=0"
+  ],
+  "*.+(js|json|ts|tsx)": [
+    "prettier --write",
+    "git add"
+  ]
+}

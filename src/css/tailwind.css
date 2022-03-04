@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-7;
+}
+
+input:focus-within ~ label {
+  @apply text-gray-500;
+}
+
+.content-container {
+  min-height: calc(100vh - theme('spacing.32'));
+}
+
+.required:after {
+  content:" *";
+  @apply text-red-500;
+  margin-left: 2px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+}
+
+.hover\:bounce:hover { animation: bounce 1s infinite; }
